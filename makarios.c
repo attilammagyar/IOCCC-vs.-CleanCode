@@ -3,7 +3,7 @@
 #define STOP_AT 522233
 
 static int magic_algorithm(int number);
-static int other_magic_algorithm(int number);
+static int is_prime(int number);
 static void print_octal(int number);
 
 int main(int argc, char* argv[])
@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 
 	for (n = 2; n <= STOP_AT; ++n)
 	{
-		if (magic_algorithm(n) && other_magic_algorithm(n))
+		if (magic_algorithm(n) && is_prime(n))
 			print_octal(n);
 	}
 
@@ -37,7 +37,7 @@ magic_algorithm(int number)
 static int is_divisable(int dividend, int divisor);
 
 static int
-other_magic_algorithm(int number)
+is_prime(int number)
 {
 	int smallest_divisor = 2;
 
