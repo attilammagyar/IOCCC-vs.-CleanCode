@@ -18,8 +18,10 @@ int main(int argc, char* argv[])
 			i /= 8;
 		}
 
-		m = (a == i) || (a/8 == i);
+		if (!((a == i) || (a/8 == i)))
+			continue;
 
+		m = 1;
 		do
 		{
 			++m;
