@@ -21,11 +21,11 @@ int main(int argc, char* argv[])
 		if (!((a == i) || (a/8 == i)))
 			continue;
 
-		m = 1;
-		do
+		m = 2;
+		while (0 != n%m)
 		{
 			++m;
-		} while (0 != n%m);
+		}
 
 		if (m == n)
 			printf("%o\n", n);
