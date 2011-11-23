@@ -23,7 +23,8 @@ int main(int argc, char* argv[])
 			}
 			else
 			{
-				is_not_ready = (n-++m||printf("%o\n",n))&&n%m;
+				(n-++m||printf("%o\n",n));
+				is_not_ready = 0 != n%m;
 			}
 		} while (is_not_ready);
 	}
