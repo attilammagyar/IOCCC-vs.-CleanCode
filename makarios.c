@@ -12,23 +12,21 @@ int main(int argc, char* argv[])
 			i = n,
 			m;
 
+		while (a < i)
+		{
+			a = a*8 + i%8;
+			i /= 8;
+			m = (a == i) || (a/8 == i);
+		}
+
 		while (1)
 		{
-			if (a < i)
-			{
-				a = a*8 + i%8;
-				i /= 8;
-				m = (a == i) || (a/8 == i);
-			}
-			else
-			{
-				++m;
-				if (m == n)
-					printf("%o\n", n);
+			++m;
+			if (m == n)
+				printf("%o\n", n);
 
-				if (0 == n%m)
-					break;
-			}
+			if (0 == n%m)
+				break;
 		}
 	}
 
