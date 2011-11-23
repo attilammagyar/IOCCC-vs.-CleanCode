@@ -48,7 +48,8 @@ get_last_octal_digit(int number)
 	return number % 8;
 }
 
-static int append_octal_digit(int number, int digit)
+static int
+append_octal_digit(int number, int digit)
 {
 	/* FIXME: handle invalid digits */
 	return number * 8 + digit;
