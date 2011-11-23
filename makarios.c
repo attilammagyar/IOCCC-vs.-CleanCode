@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 			i = n,
 			m;
 
-		do
+		while (1)
 		{
 			if (a < i)
 			{
@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 				if (0 == n%m)
 					break;
 			}
-		} while (1);
+		}
 	}
 
 	return 0;
