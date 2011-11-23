@@ -34,11 +34,22 @@ magic_algorithm(int number)
 	return (a == i) || (a/8 == i);
 }
 
-static int is_divisable(int dividend, int divisor);
+static int find_smallest_divisor_greater_than_one(int number);
 
 static int
 is_prime(int number)
 {
+	/* FIXME: handle 0 and 1 */
+	return find_smallest_divisor_greater_than_one(number) == number;
+}
+
+static int is_divisable(int dividend, int divisor);
+
+static int
+find_smallest_divisor_greater_than_one(int number)
+{
+	/* FIXME: handle negative numbers */
+
 	int smallest_divisor = 2;
 
 	while (!is_divisable(number, smallest_divisor))
@@ -46,7 +57,7 @@ is_prime(int number)
 		++smallest_divisor;
 	}
 
-	return smallest_divisor == number;
+	return smallest_divisor;
 }
 
 static int
