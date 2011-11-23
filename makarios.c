@@ -4,12 +4,12 @@
 
 int main(int argc, char* argv[])
 {
-	int n = 1,
-		i;
+	int n = 2;
 
-	while((i=++n) <= STOP_AT)
+	while(n <= STOP_AT)
 	{
 		int a = 0,
+			i = n,
 			m, is_not_ready;
 
 		do
@@ -23,12 +23,15 @@ int main(int argc, char* argv[])
 			}
 			else
 			{
-				if (++m == n)
+				++m;
+				if (m == n)
 					printf("%o\n", n);
 
 				is_not_ready = 0 != n%m;
 			}
 		} while (is_not_ready);
+
+		++n;
 	}
 
 	return 0;
