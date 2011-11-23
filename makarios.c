@@ -20,6 +20,7 @@ int main(int argc, char* argv[])
 }
 
 static int get_last_octal_digit(int number);
+static int append_octal_digit(int number, int digit);
 static int remove_last_octal_digit(int number);
 
 static int
@@ -32,7 +33,7 @@ magic_algorithm(int number)
 	while (a < i)
 	{
 		digit = get_last_octal_digit(i);
-		a = a*8 + digit;
+		a = append_octal_digit(a, digit);
 		i = remove_last_octal_digit(i);
 	}
 
@@ -43,6 +44,12 @@ static int
 get_last_octal_digit(int number)
 {
 	return number % 8;
+}
+
+static int append_octal_digit(int number, int digit)
+{
+	/* FIXME: handle invalid digits */
+	return number * 8 + digit;
 }
 
 static int
