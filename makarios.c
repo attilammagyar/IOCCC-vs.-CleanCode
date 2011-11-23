@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 	{
 		int a = 0,
 			i = n,
-			m, is_not_ready;
+			m;
 
 		do
 		{
@@ -19,7 +19,6 @@ int main(int argc, char* argv[])
 				a = a*8 + i%8;
 				i /= 8;
 				m = (a == i) || (a/8 == i);
-				is_not_ready = 1;
 			}
 			else
 			{
@@ -27,9 +26,10 @@ int main(int argc, char* argv[])
 				if (m == n)
 					printf("%o\n", n);
 
-				is_not_ready = 0 != n%m;
+				if (0 == n%m)
+					break;
 			}
-		} while (is_not_ready);
+		} while (1);
 	}
 
 	return 0;
