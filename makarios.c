@@ -14,7 +14,14 @@ int main(int argc, char* argv[])
 
 		do
 		{
-			is_not_ready = a<i?a=a*8+i%8,i/=8,m=a==i|a/8==i,1:(n-++m||printf("%o\n",n))&&n%m;
+			if (a < i)
+			{
+				is_not_ready = a=a*8+i%8,i/=8,m=a==i|a/8==i,1;
+			}
+			else
+			{
+				is_not_ready = (n-++m||printf("%o\n",n))&&n%m;
+			}
 		} while (is_not_ready);
 	}
 
