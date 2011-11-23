@@ -19,19 +19,36 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
+static int get_last_octal_digit(int number);
+static int remove_last_octal_digit(int number);
+
 static int
 magic_algorithm(int number)
 {
 	int a = 0,
-		i = number;
+		i = number,
+		digit;
 
 	while (a < i)
 	{
-		a = a*8 + i%8;
-		i /= 8;
+		digit = get_last_octal_digit(i);
+		a = a*8 + digit;
+		i = remove_last_octal_digit(i);
 	}
 
-	return (a == i) || (a/8 == i);
+	return (a == i) || (remove_last_octal_digit(a) == i);
+}
+
+static int
+get_last_octal_digit(int number)
+{
+	return number % 8;
+}
+
+static int
+remove_last_octal_digit(int number)
+{
+	return number / 8;
 }
 
 static int find_smallest_divisor_greater_than_one(int number);
