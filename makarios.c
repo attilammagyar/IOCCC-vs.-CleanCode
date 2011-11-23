@@ -20,15 +20,12 @@ int main(int argc, char* argv[])
 
 		m = (a == i) || (a/8 == i);
 
-		while (1)
+		do
 		{
 			++m;
 			if (m == n)
 				printf("%o\n", n);
-
-			if (0 == n%m)
-				break;
-		}
+		} while (0 != n%m);
 	}
 
 	return 0;
