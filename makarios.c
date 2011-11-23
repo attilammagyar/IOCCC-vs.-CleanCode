@@ -26,18 +26,19 @@ static int remove_last_octal_digit(int number);
 static int
 magic_algorithm(int number)
 {
-	int a = 0,
-		i = number,
+	int reversed_digits = 0,
+		remaining_digits = number,
 		digit;
 
-	while (a < i)
+	while (reversed_digits < remaining_digits)
 	{
-		digit = get_last_octal_digit(i);
-		a = append_octal_digit(a, digit);
-		i = remove_last_octal_digit(i);
+		digit = get_last_octal_digit(remaining_digits);
+		reversed_digits = append_octal_digit(reversed_digits, digit);
+		remaining_digits = remove_last_octal_digit(remaining_digits);
 	}
 
-	return (a == i) || (remove_last_octal_digit(a) == i);
+	return (reversed_digits == remaining_digits)
+		|| (remove_last_octal_digit(reversed_digits) == remaining_digits);
 }
 
 static int
