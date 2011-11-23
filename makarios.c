@@ -23,9 +23,10 @@ int main(int argc, char* argv[])
 		do
 		{
 			++m;
-			if (m == n)
-				printf("%o\n", n);
 		} while (0 != n%m);
+
+		if (m == n)
+			printf("%o\n", n);
 	}
 
 	return 0;
