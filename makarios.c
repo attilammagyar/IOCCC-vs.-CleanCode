@@ -34,18 +34,27 @@ magic_algorithm(int number)
 	return (a == i) || (a/8 == i);
 }
 
+static int is_divisable(int dividend, int divisor);
+
 static int
 other_magic_algorithm(int number)
 {
 	int m;
 
 	m = 2;
-	while (0 != number%m)
+	while (!is_divisable(number, m))
 	{
 		++m;
 	}
 
 	return m == number;
+}
+
+static int
+is_divisable(int dividend, int divisor)
+{
+	/* FIXME: handle division by zero */
+	return 0 == dividend % divisor;
 }
 
 static void
