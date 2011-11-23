@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 			}
 			else
 			{
-				if (0 == n-++m)
+				if (++m == n)
 					printf("%o\n", n);
 
 				is_not_ready = 0 != n%m;
