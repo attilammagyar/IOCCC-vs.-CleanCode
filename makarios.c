@@ -39,15 +39,14 @@ static int is_divisable(int dividend, int divisor);
 static int
 other_magic_algorithm(int number)
 {
-	int m;
+	int smallest_divisor = 2;
 
-	m = 2;
-	while (!is_divisable(number, m))
+	while (!is_divisable(number, smallest_divisor))
 	{
-		++m;
+		++smallest_divisor;
 	}
 
-	return m == number;
+	return smallest_divisor == number;
 }
 
 static int
