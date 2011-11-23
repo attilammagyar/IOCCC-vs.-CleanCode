@@ -16,7 +16,10 @@ int main(int argc, char* argv[])
 		{
 			if (a < i)
 			{
-				is_not_ready = a=a*8+i%8,i/=8,m=a==i|a/8==i,1;
+				a = a*8 + i%8;
+				i /= 8;
+				m = (a == i) | (a/8 == i);
+				is_not_ready = 1;
 			}
 			else
 			{
