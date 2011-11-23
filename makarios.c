@@ -2,7 +2,7 @@
 
 #define STOP_AT 522233
 
-static int magic_algorithm(int number);
+static int is_palindromic_in_octal_base(int number);
 static int is_prime(int number);
 static void print_octal(int number);
 
@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 
 	for (n = 2; n <= STOP_AT; ++n)
 	{
-		if (magic_algorithm(n) && is_prime(n))
+		if (is_palindromic_in_octal_base(n) && is_prime(n))
 			print_octal(n);
 	}
 
@@ -24,8 +24,10 @@ static int append_octal_digit(int number, int digit);
 static int remove_last_octal_digit(int number);
 
 static int
-magic_algorithm(int number)
+is_palindromic_in_octal_base(int number)
 {
+	/* FIXME: handle negative numbers */
+
 	int reversed_digits = 0,
 		remaining_digits = number;
 
