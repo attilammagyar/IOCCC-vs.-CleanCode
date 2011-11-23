@@ -23,7 +23,9 @@ int main(int argc, char* argv[])
 			}
 			else
 			{
-				(n-++m||printf("%o\n",n));
+				if (0 == n-++m)
+					printf("%o\n", n);
+
 				is_not_ready = 0 != n%m;
 			}
 		} while (is_not_ready);
