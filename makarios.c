@@ -4,9 +4,9 @@
 
 int main(int argc, char* argv[])
 {
-	int n = 2;
+	int n;
 
-	while(n <= STOP_AT)
+	for (n = 2; n <= STOP_AT; ++n)
 	{
 		int a = 0,
 			i = n,
@@ -30,8 +30,6 @@ int main(int argc, char* argv[])
 				is_not_ready = 0 != n%m;
 			}
 		} while (is_not_ready);
-
-		++n;
 	}
 
 	return 0;
