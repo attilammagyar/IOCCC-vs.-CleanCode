@@ -16,8 +16,9 @@ int main(int argc, char* argv[])
 		{
 			a = a*8 + i%8;
 			i /= 8;
-			m = (a == i) || (a/8 == i);
 		}
+
+		m = (a == i) || (a/8 == i);
 
 		while (1)
 		{
