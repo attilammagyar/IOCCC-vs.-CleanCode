@@ -12,10 +12,7 @@ int main(int argc, char* argv[])
 
 	for (n = 2; n <= STOP_AT; ++n)
 	{
-		if (!magic_algorithm(n))
-			continue;
-
-		if (other_magic_algorithm(n))
+		if (magic_algorithm(n) && other_magic_algorithm(n))
 			print_octal(n);
 	}
 
