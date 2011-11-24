@@ -5,7 +5,9 @@ static int find_smallest_divisor_greater_than_one(int number);
 int
 is_prime(int number)
 {
-	/* FIXME: handle 0 and 1 */
+	if (number == 0 || number == 1)
+		return 0;
+
 	return find_smallest_divisor_greater_than_one(number) == number;
 }
 

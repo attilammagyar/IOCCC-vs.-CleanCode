@@ -2,6 +2,16 @@
 
 #include <lib/primes.h>
 
+void zero_is_not_prime()
+{
+	assert_false(is_prime(0));
+}
+
+void one_is_not_prime()
+{
+	assert_false(is_prime(1));
+}
+
 void two_is_prime()
 {
 	assert_true(is_prime(2));
@@ -29,6 +39,8 @@ void forty_three_is_prime()
 
 int main()
 {
+	zero_is_not_prime();
+	one_is_not_prime();
 	two_is_prime();
 	three_is_prime();
 	six_is_not_prime();
