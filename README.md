@@ -19,9 +19,8 @@ refactored to fulfill that statement?
 Buld tips
 ---------
 
-Using the [makefile](http://ioccc.org/1995/Makefile) provided by
-IOCCC organizers, the program can be built on a typical Linux
-system using GCC by issuing the following command:
+The program can be built on a typical Linux system using GCC by
+issuing the following command:
 
     $ make makarios
 
@@ -29,14 +28,9 @@ system using GCC by issuing the following command:
 Running tests
 -------------
 
-No automated tests exist for the program at the moment, but during
-refactoring, I used the following commands to see if I didn't mess
-up anything badly:
+Use the following command to run tests:
 
-    $ gcc -Wall -ansi -O -o ./makarios makarios.c \
-      && ./makarios >/tmp/actual.txt \
-      && diff -u first_150_numbers.txt /tmp/actual.txt \
-      && echo OK
+    $ make check >/dev/null && echo "OK"
 
 
 License
