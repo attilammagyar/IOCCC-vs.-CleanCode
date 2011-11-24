@@ -34,7 +34,6 @@ find_smallest_divisor_greater_than_one(int number)
 static int
 is_divisable(int dividend, int divisor)
 {
-	/* FIXME: handle division by zero */
 	return 0 == dividend % divisor;
 }
 
