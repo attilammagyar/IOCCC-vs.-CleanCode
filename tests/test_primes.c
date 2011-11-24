@@ -37,6 +37,21 @@ void forty_three_is_prime()
 	assert_true(is_prime(43));
 }
 
+void minus_one_is_not_prime()
+{
+	assert_false(is_prime(-1));
+}
+
+void minus_seven_is_prime()
+{
+	assert_true(is_prime(-7));
+}
+
+void minus_forty_two_is_not_prime()
+{
+	assert_false(is_prime(-42));
+}
+
 int main()
 {
 	zero_is_not_prime();
@@ -46,5 +61,8 @@ int main()
 	six_is_not_prime();
 	forty_two_is_not_prime();
 	forty_three_is_prime();
+	minus_one_is_not_prime();
+	minus_seven_is_prime();
+	minus_forty_two_is_not_prime();
 	finish_testing();
 }

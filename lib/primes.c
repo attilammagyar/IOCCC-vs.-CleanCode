@@ -1,34 +1,36 @@
 #include "primes.h"
 
-static int find_smallest_divisor_greater_than_one(int number);
+#include <stdlib.h>
+
+static int find_divisor_closest_to_one(int number);
 
 int
 is_prime(int number)
 {
-	if (number == 0 || number == 1)
+	if (number == 0 || number == 1 || number == -1)
 		return 0;
 
-	return find_smallest_divisor_greater_than_one(number) == number;
+	return find_divisor_closest_to_one(number) == number;
 }
 
 static int is_divisable(int dividend, int divisor);
 
 static int
-find_smallest_divisor_greater_than_one(int number)
+find_divisor_closest_to_one(int number)
 {
-	/* FIXME: handle negative numbers */
-
 	/* OPTIMIZATION FIXME: The smallest divisor is always less than
 						   the square root of the number. */
 
-	int smallest_divisor = 2;
+	int divisor_candidate = 2,
+		signum = (number < 0) ? -1 : 1,
+		absolute_value = abs(number);
 
-	while (!is_divisable(number, smallest_divisor))
+	while (!is_divisable(absolute_value, divisor_candidate))
 	{
-		++smallest_divisor;
+		++divisor_candidate;
 	}
 
-	return smallest_divisor;
+	return signum * divisor_candidate;
 }
 
 static int
