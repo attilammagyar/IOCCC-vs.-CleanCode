@@ -31,6 +31,7 @@ is_palindromic_in_octal_base(int number)
 	int reversed_digits = 0,
 		remaining_digits = number;
 
+	/* NOTE: The loop will stop when the digit in the middle is reached.  */
 	while (reversed_digits < remaining_digits)
 	{
 		int digit = get_last_octal_digit(remaining_digits);
@@ -38,6 +39,8 @@ is_palindromic_in_octal_base(int number)
 		remaining_digits = remove_last_octal_digit(remaining_digits);
 	}
 
+	/* NOTE: For an odd number of digits, reversed_digits contains
+			 an extra digit (coming from the middle). */
 	return (reversed_digits == remaining_digits)
 		|| (remove_last_octal_digit(reversed_digits) == remaining_digits);
 }
