@@ -1,5 +1,8 @@
-LIBS=./lib/primes.c
-TESTS=tests/test_primes
+LIBS=./lib/primes.c \
+	./lib/palindromes.c
+
+TESTS=tests/test_primes \
+	tests/test_palindromes
 
 RM=rm
 DIFF=diff -u
