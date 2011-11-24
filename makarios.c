@@ -1,9 +1,10 @@
 #include <stdio.h>
 
+#include <lib/primes.h>
+
 #define STOP_AT 522233
 
 static int is_palindromic_in_octal_base(int number);
-static int is_prime(int number);
 static void print_octal(int number);
 
 int main(int argc, char* argv[])
@@ -62,39 +63,6 @@ static int
 remove_last_octal_digit(int number)
 {
 	return number / 8;
-}
-
-static int find_smallest_divisor_greater_than_one(int number);
-
-static int
-is_prime(int number)
-{
-	/* FIXME: handle 0 and 1 */
-	return find_smallest_divisor_greater_than_one(number) == number;
-}
-
-static int is_divisable(int dividend, int divisor);
-
-static int
-find_smallest_divisor_greater_than_one(int number)
-{
-	/* FIXME: handle negative numbers */
-
-	int smallest_divisor = 2;
-
-	while (!is_divisable(number, smallest_divisor))
-	{
-		++smallest_divisor;
-	}
-
-	return smallest_divisor;
-}
-
-static int
-is_divisable(int dividend, int divisor)
-{
-	/* FIXME: handle division by zero */
-	return 0 == dividend % divisor;
 }
 
 static void
