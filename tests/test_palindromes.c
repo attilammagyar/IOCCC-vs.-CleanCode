@@ -46,6 +46,21 @@ void numbers_are_not_accepted_if_not_palindromic()
 	assert_false(is_palindromic_in_octal_base(OCTAL_73257));
 }
 
+void negative_palindromic_numbers_are_accepted()
+{
+	assert_true(is_palindromic_in_octal_base(-5));
+	assert_true(is_palindromic_in_octal_base(-OCTAL_5775));
+	assert_true(is_palindromic_in_octal_base(-OCTAL_70207));
+}
+
+void negative_numbers_are_not_accepted_if_not_palindromic()
+{
+	assert_false(is_palindromic_in_octal_base(-OCTAL_42));
+	assert_false(is_palindromic_in_octal_base(-OCTAL_172));
+	assert_false(is_palindromic_in_octal_base(-OCTAL_1234));
+	assert_false(is_palindromic_in_octal_base(-OCTAL_73257));
+}
+
 int main()
 {
 	one_digit_is_palindromic();
@@ -53,6 +68,9 @@ int main()
 	odd_number_of_digits_can_be_palindromic();
 
 	numbers_are_not_accepted_if_not_palindromic();
+
+	negative_palindromic_numbers_are_accepted();
+	negative_numbers_are_not_accepted_if_not_palindromic();
 
 	finish_testing();
 }

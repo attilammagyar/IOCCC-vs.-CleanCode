@@ -1,5 +1,7 @@
 #include "palindromes.h"
 
+#include <stdlib.h>
+
 static int get_last_octal_digit(int number);
 static int append_octal_digit(int number, int digit);
 static int remove_last_octal_digit(int number);
@@ -7,10 +9,8 @@ static int remove_last_octal_digit(int number);
 int
 is_palindromic_in_octal_base(int number)
 {
-	/* FIXME: handle negative numbers */
-
 	int reversed_digits = 0,
-		remaining_digits = number;
+		remaining_digits = abs(number);
 
 	/* NOTE: The loop will stop when the digit in the middle is reached.  */
 	while (reversed_digits < remaining_digits)
