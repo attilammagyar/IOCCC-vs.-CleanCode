@@ -8,7 +8,7 @@ TESTS=tests/test_primes \
 
 RM=rm
 DIFF=diff -u
-CFLAGS=-ansi -O -Wall -I .
+CFLAGS=-ansi -O3 -Wall -I .
 CC=gcc
 
 makarios: makarios.c
@@ -29,5 +29,12 @@ check: makarios unit_tests
 	) \
 	&& ./makarios | ${DIFF} "expected_output.txt" - >&2
 
+performance:
+	(	for type in original refactored; \
+		do \
+			${CC} ${CFLAGS} -o perf_$$type ${LIBS} ./tests/performance/perf_$$type.c || exit 1; \
+		done; \
+	)
+
 clean:
-	$(RM) -f *.o makarios tests/*.test
+	$(RM) -f *.o makarios perf_original perf_refactored tests/*.test
