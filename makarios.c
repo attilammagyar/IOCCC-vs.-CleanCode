@@ -1,20 +1,17 @@
 #include <stdio.h>
 
-#include <lib/primes.h>
-#include <lib/palindromes.h>
-
-#define STOP_AT 522233
+#include <lib/octal_palindromic_primes.h>
 
 static void print_octal(int number);
 
 int main(int argc, char* argv[])
 {
-	int n;
+	int n = 0, i;
 
-	for (n = 2; n <= STOP_AT; ++n)
+	for (i = 0; i != 150; ++i)
 	{
-		if (is_palindromic(n, OCTAL) && is_prime(n))
-			print_octal(n);
+		n = find_octal_palindromic_prime_bigger_than(n);
+		print_octal(n);
 	}
 
 	return 0;

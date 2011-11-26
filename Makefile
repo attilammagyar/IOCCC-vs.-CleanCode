@@ -1,8 +1,10 @@
 LIBS=./lib/primes.c \
-	./lib/palindromes.c
+	./lib/palindromes.c \
+	./lib/octal_palindromic_primes.c
 
 TESTS=tests/test_primes \
-	tests/test_palindromes
+	tests/test_palindromes \
+	tests/test_octal_palindromic_primes
 
 RM=rm
 DIFF=diff -u
