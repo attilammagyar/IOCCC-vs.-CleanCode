@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 
 	for (n = 2; n <= STOP_AT; ++n)
 	{
-		if (is_palindromic_in_octal_base(n) && is_prime(n))
+		if (is_palindromic(n, OCTAL) && is_prime(n))
 			print_octal(n);
 	}
 

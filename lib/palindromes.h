@@ -1,6 +1,13 @@
 #ifndef _PALINDROMES_H
 #define _PALINDROMES_H
 
-int is_palindromic_in_octal_base(int number);
+#define PALINDROME_ERROR -1
+
+#define BINARY 2
+#define OCTAL 8
+#define DECIMAL 10
+#define HEXADECIMAL 16
+
+int is_palindromic(int number, int base);
 
 #endif
