@@ -8,7 +8,7 @@ TESTS=tests/test_primes \
 
 RM=rm
 DIFF=diff -u
-CFLAGS=-ansi -O3 -Wall -I .
+CFLAGS=-lm -ansi -O3 -Wall -I .
 CC=gcc
 
 makarios: makarios.c

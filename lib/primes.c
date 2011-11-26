@@ -1,5 +1,6 @@
 #include "primes.h"
 
+#include <math.h>
 #include <stdlib.h>
 
 static int find_divisor_closest_to_one(int number);
@@ -18,16 +19,22 @@ static int is_divisable(int dividend, int divisor);
 static int
 find_divisor_closest_to_one(int number)
 {
-	/* OPTIMIZATION FIXME: The smallest divisor is always less than
-						   the square root of the number. */
-
-	int divisor_candidate = 2,
+	int divisor_candidate = 3,
 		signum = (number < 0) ? -1 : 1,
-		absolute_value = abs(number);
+		absolute_value = abs(number),
+		square_root = (int)sqrt((double)absolute_value) + 1;
+
+	if (is_divisable(absolute_value, 2))
+		return signum * 2;
 
 	while (!is_divisable(absolute_value, divisor_candidate))
 	{
-		++divisor_candidate;
+		divisor_candidate += 2;
+		if (divisor_candidate > square_root)
+		{
+			divisor_candidate = absolute_value;
+			break;
+		}
 	}
 
 	return signum * divisor_candidate;
