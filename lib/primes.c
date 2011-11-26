@@ -1,8 +1,5 @@
 #include "primes.h"
 
-#include <math.h>
-#include <stdlib.h>
-
 static int is_divisable_by_non_trivial_divisor(int number);
 
 int

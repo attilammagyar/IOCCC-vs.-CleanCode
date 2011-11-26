@@ -1,7 +1,5 @@
 #include "palindromes.h"
 
-#include <stdlib.h>
-
 static int is_invalid_base(int base);
 static int get_last_digit(int number, int base);
 static int append_digit(int number, int digit, int base);

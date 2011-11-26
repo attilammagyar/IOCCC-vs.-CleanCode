@@ -1,6 +1,8 @@
 #ifndef _PALINDROMES_H
 #define _PALINDROMES_H
 
+#include <stdlib.h>
+
 #define PALINDROME_ERROR -1
 
 #define BINARY 2
