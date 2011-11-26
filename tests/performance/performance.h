@@ -1,4 +1,4 @@
-#define REPEAT 10
+#define REPEAT 40
 
 #define repeat(code) \
 	do \
