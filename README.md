@@ -13,7 +13,11 @@ bytes:
     for(a=0;a<i?a=a*8+i%8,i/=8,m=a==i|a/8==i,1:(n-++m||printf("%o\n",n))&&n%m;);}
 
 "Good code documents itself", many say, but can an IOCCC winner be
-refactored to fulfill that statement?
+refactored to fulfill that statement? See the trivial steps I took
+in order to refactor the above code to make it clear an readable
+by browsing through the patches in this repository, or read the
+detailed explanation about the project at [my
+blog](http://athos.blogs.balabit.com/2011/11/ioccc-vs-clean-code/).
 
 
 Buld tips
